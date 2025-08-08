@@ -1,34 +1,30 @@
 import java.util.Scanner;
 public class TitleCase {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
-        boolean cap = true;
-        String result = "";
-        for (int i = 0; i < input.length(); i++) {
-            char ch = input.charAt(i);
-            char newChar;
-            if (ch == ' ') {
-                result += ch;
-                cap = true;
-                continue;
-            }
-            if (cap) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        int n = str.length();
+        String r = "";
+        for (int i = 0; i < n; i++) {
+            char ch = str.charAt(i);
+            if (i == 0 && ch >= 'a' && ch <= 'z') {
+                ch = (char)(ch - 32);
+            } 
+            else if (i == 0 && ch >= 'A' && ch <= 'Z') {
+            } 
+            else if (i > 0 && str.charAt(i - 1) == ' ') {
                 if (ch >= 'a' && ch <= 'z') {
-                    newChar = (char)(ch - 32);
-                } else {
-                    newChar = ch;
+                    ch = (char)(ch - 32);
                 }
-                cap = false;
-            } else {
+            } 
+            else {
                 if (ch >= 'A' && ch <= 'Z') {
-                    newChar = (char)(ch + 32);
-                } else {
-                    newChar = ch;
+                    ch = (char)(ch + 32);
                 }
             }
-            result += newChar;
+
+            r = r + ch;
         }
-        System.out.println(result);
+        System.out.print(r);
     }
 }
