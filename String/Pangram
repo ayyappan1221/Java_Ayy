@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class Pangram {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine().toLowerCase();
+        int freq[] = new int[26];
+        for(int i = 0; i < str.length(); i++){
+            char ch = str.charAt(i);
+            if(ch >= 'a' && ch <= 'z'){
+                int x = (int)(ch - 'a');
+                freq[x]++;
+            }
+        }
+        int flag = 0;
+        for(int i = 0; i < 26; i++){
+            if(freq[i] == 0){
+                flag = 1;
+                break;
+            }
+        }
+        if(flag == 0){
+            System.out.print("Pangram");
+        } else {
+            System.out.print("Not Pangram");
+        }
+    }
+}
