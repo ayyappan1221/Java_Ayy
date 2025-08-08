@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class BinaryAdd {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int bin1 = scanner.nextInt(); 
+        int bin2 = scanner.nextInt();
+        int dec1 = binToDec(bin1);
+        int dec2 = binToDec(bin2);
+        int sumDecimal = dec1 + dec2;
+        int binarySum = deciToBin(sumDecimal);
+        System.out.println(binarySum);
+    }
+    public static int binToDec(int binary) {
+        int dec = 0, base = 1, rem;
+        while (binary > 0) {
+            rem = binary % 10;
+            dec = dec + rem * base;
+            base = base * 2;
+            binary = binary / 10;
+        }
+        return dec;
+    }
+    public static int deciToBin(int decimal) {
+        int rem, bin = 0, place = 1;
+        while (decimal > 0) {
+            rem = decimal % 2;
+            bin = rem * place + bin;
+            place *= 10;
+            decimal /= 2;
+        }
+        return bin;
+    }
+}
