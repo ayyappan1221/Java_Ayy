@@ -10,9 +10,9 @@ public class Abundant {
             }
         }
         if (sum > num) {
-            System.out.println("yes");
+            System.out.println("Abundant Number");
         } else {
-            System.out.println("no");
+            System.out.println("Not Abundant Number");
         }
     }
 }
