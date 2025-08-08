@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class Automorphic {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = sc.nextInt();
+        int sqr = num * num;
+        int temp = num;
+        boolean b = true;
+        while (temp > 0) {
+            if ((temp % 10) != (sqr % 10)) {
+                b = false;
+                break;
+            }
+            temp = temp / 10;
+            sqr = sqr / 10;
+        }
+        if (b) {
+            System.out.println("yes");
+        } else {
+            System.out.println("no");
+        }
+    }
+}
