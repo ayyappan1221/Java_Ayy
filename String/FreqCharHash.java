@@ -13,7 +13,7 @@ public class FreqCharHash{
         }
         for(int i=0;i<n;i++){
             if(h[ch[i]]!=0&&ch[i]!=32){
-                System.out.println(ch[i]+"->"+h[ch[i]]);
+                System.out.println(ch[i]+"-"+h[ch[i]]);
             }
             h[ch[i]]=0;
         }
