@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class EncodeToString {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        int n = str.length();
+        String res = "";
+        int i = 0;
+        while (i < n) {
+            char ch = str.charAt(i);
+            int count = 0;
+            while (i < n && str.charAt(i) == ch) {
+                count++;
+                i++;
+            }
+            res = res + ch;
+            String countStr = "";
+            int temp = count;
+            while (temp > 0) {
+                int digit = temp % 10;
+                char digitChar = (char)(digit + 48);
+                countStr = digitChar + countStr;
+                temp = temp / 10;
+            }
+            res = res + countStr;
+        }
+        System.out.print(res);
+    }
+}
