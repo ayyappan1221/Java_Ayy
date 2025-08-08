@@ -22,7 +22,7 @@ public class RevHalves{
             }
         }
         else{
-            for(int i=0;i<=mid/2;i++){
+            for(int i=0;i<mid/2;i++){
                 int t=a[i];
                 a[i]=a[mid-i];
                 a[mid-i]=t;
